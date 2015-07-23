@@ -15,7 +15,8 @@
   </property>
   <property name="styleSheet">
    <string notr="true">background-color: rgb(85, 170, 255);
-border-color: rgb(85, 0, 127);</string>
+border-color: rgb(85, 0, 127);
+</string>
   </property>
   <property name="documentMode">
    <bool>false</bool>

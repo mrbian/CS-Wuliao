@@ -16,8 +16,11 @@ public:
     ~dialog_addfriend();
 signals:
     void sendFindData(QString,QString);
+
 private slots:
     void on_pushButton_yes_clicked();
+
+    void on_pushButton_cancel_clicked();
 
 private:
     Ui::dialog_addfriend *ui;

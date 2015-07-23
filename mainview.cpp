@@ -12,11 +12,19 @@ MainView::MainView(QWidget *parent) :
     setWindowFlags(flags);
     ui->setupUi(this);
     ui->tableWidget_friend->setAlternatingRowColors(true);
+    ui->tableWidget_friend->setSelectionBehavior(QAbstractItemView::SelectRows);
+    ui->tableWidget_friend->setSelectionMode(QAbstractItemView::SingleSelection);
+    ui->tableWidget_group->setAlternatingRowColors(true);
+    ui->tableWidget_group->setSelectionBehavior(QAbstractItemView::SelectRows);
+    ui->tableWidget_group->setSelectionMode(QAbstractItemView::SingleSelection);
     _find = new dialog_addfriend();
     _add_friend_check = new dialog_addfriend_check();
-    connect(this,SIGNAL(sendFriendData(QString,QString)),_add_friend_check,SLOT(output_data(QString,QString)));
-    connect(_find,SIGNAL(sendFindData(QString,QString)),this,SLOT(receiveFindData(QString,QString)));
+    _find_group = new dialog_addgroup();
+    _add_group_check = new dialog_addgroup_check();
+    connect(_find,SIGNAL(sendFindData(QString,QString)),_add_friend_check,SLOT(receiveFindData(QString,QString)));
+    connect(_find_group,SIGNAL(sendFindGroupData(QString,QString)),_add_group_check,SLOT(receiveFindGroupData(QString,QString)));
     connect(_add_friend_check,SIGNAL(sendMyFriend(QString,QString)),this,SLOT(getMyFriend(QString,QString)));
+    connect(_add_group_check,SIGNAL(sendMyGroup(QString,QString)),this,SLOT(getMyGroup(QString,QString)));
 }
 
 MainView::~MainView()
@@ -114,16 +122,22 @@ void MainView::on_pushButton_clicked()
    _find->exec();
 }
 
-void MainView::receiveFindData(QString name, QString id){
-    _find->close();
-    if(name == "root" && id == "root"){
-        emit sendFriendData(name,id);
-    }
-    //QMessageBox::about(this,name,id);
+void MainView::on_pushButton_addgroup_clicked()
+{
+    _find_group->exec();
 }
+
+
 
 void MainView::getMyFriend(QString name, QString id){
     ui->tableWidget_friend->insertRow(0);
     ui->tableWidget_friend->setItem(0,0,new QTableWidgetItem(name));
     ui->tableWidget_friend->setItem(0,1,new QTableWidgetItem(id));
 }
+
+void MainView::getMyGroup(QString name, QString id){
+    ui->tableWidget_group->insertRow(0);
+    ui->tableWidget_group->setItem(0,0,new QTableWidgetItem(name));
+    ui->tableWidget_group->setItem(0,1,new QTableWidgetItem(id));
+}
+

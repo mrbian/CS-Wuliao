@@ -20,7 +20,14 @@
    <string>无聊来聊天</string>
   </property>
   <property name="styleSheet">
-   <string notr="true"/>
+   <string notr="true">QTableWidget {
+         selection-background-color: qlineargradient(x1: 0, y1: 0, x2: 0.5, y2: 0.5,
+                                     stop: 0 #FF92BB, stop: 1 white);
+     }
+QTableWidget QTableCornerButton::section { 
+         background: red;
+         border: 2px outset red;
+     }</string>
   </property>
   <widget class="Line" name="line">
    <property name="geometry">
@@ -100,6 +107,16 @@ background-color: rgb(85, 170, 255);</string>
    <layout class="QVBoxLayout" name="verticalLayout_4">
     <item>
      <widget class="QTableWidget" name="tableWidget_friend">
+      <property name="styleSheet">
+       <string notr="true"> QTableWidget {
+         selection-background-color: qlineargradient(x1: 0, y1: 0, x2: 0.5, y2: 0.5,
+                                     stop: 0 #FF92BB, stop: 1 white);
+     }
+QTableWidget QTableCornerButton::section { 
+         background: red;
+         border: 2px outset red;
+     }</string>
+      </property>
       <column>
        <property name="text">
         <string>昵称</string>
@@ -132,6 +149,16 @@ background-color: rgb(85, 170, 255);</string>
     </item>
     <item>
      <widget class="QTableWidget" name="tableWidget_group">
+      <property name="styleSheet">
+       <string notr="true"> QTableWidget {
+         selection-background-color: qlineargradient(x1: 0, y1: 0, x2: 0.5, y2: 0.5,
+                                     stop: 0 #FF92BB, stop: 1 white);
+     }
+QTableWidget QTableCornerButton::section { 
+         background: red;
+         border: 2px outset red;
+     }</string>
+      </property>
       <column>
        <property name="text">
         <string>组名</string>

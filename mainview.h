@@ -11,6 +11,8 @@
 #include <QMessageBox>
 #include "dialog_addfriend.h"
 #include "dialog_addfriend_check.h"
+#include "dialog_addgroup.h"
+#include "dialog_addgroup_check.h"
 namespace Ui {
     class MainView;
 }
@@ -33,11 +35,13 @@ public:
 
     dialog_addfriend *_find;
     dialog_addfriend_check *_add_friend_check;
-signals:
-    void sendFriendData(QString,QString);
+    dialog_addgroup * _find_group;
+    dialog_addgroup_check *_add_group_check;
+
 public slots:
     void iconActivated(QSystemTrayIcon::ActivationReason reason);
     void getMyFriend(QString,QString);
+    void getMyGroup(QString,QString);
 private:
     Ui::MainView *ui;
 
@@ -47,8 +51,7 @@ private slots:
    void on_pushButton_clicked();
    void on_pushButton_myfreind_clicked();
    void on_pushButton_mygroup_clicked();
-   void receiveFindData(QString,QString);
-
+   void on_pushButton_addgroup_clicked();
 };
 
 #endif // MAINVIEW_H

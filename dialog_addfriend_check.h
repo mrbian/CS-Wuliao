@@ -17,9 +17,11 @@ public:
 signals:
     void sendMyFriend(QString,QString);
 public slots:
-    void output_data(QString,QString);
+    void receiveFindData(QString,QString);
 private slots:
     void on_pushButton_yes_clicked();
+
+    void on_pushButton_cancel_clicked();
 
 private:
     Ui::dialog_addfriend_check *ui;

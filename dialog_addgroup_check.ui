@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>dialog_addfriend_check</class>
- <widget class="QDialog" name="dialog_addfriend_check">
+ <class>dialog_addgroup_check</class>
+ <widget class="QDialog" name="dialog_addgroup_check">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>440</width>
-    <height>261</height>
+    <width>400</width>
+    <height>300</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>无聊来加好友</string>
+   <string>Dialog</string>
   </property>
   <property name="styleSheet">
    <string notr="true">background-color: rgb(85, 170, 255);
@@ -24,40 +24,11 @@ QTableWidget QTableCornerButton::section {
          border: 2px outset red;
      }</string>
   </property>
-  <widget class="QPushButton" name="pushButton_yes">
+  <widget class="QTableWidget" name="tableWidget_add_group">
    <property name="geometry">
     <rect>
-     <x>100</x>
-     <y>200</y>
-     <width>101</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background-color: rgb(255, 85, 0);</string>
-   </property>
-   <property name="text">
-    <string>加为好友</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushButton_cancel">
-   <property name="geometry">
-    <rect>
-     <x>210</x>
-     <y>200</y>
-     <width>101</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>取消</string>
-   </property>
-  </widget>
-  <widget class="QTableWidget" name="tableWidget_add_friend">
-   <property name="geometry">
-    <rect>
-     <x>100</x>
-     <y>10</y>
+     <x>80</x>
+     <y>40</y>
      <width>231</width>
      <height>181</height>
     </rect>
@@ -67,7 +38,7 @@ QTableWidget QTableCornerButton::section {
    </property>
    <column>
     <property name="text">
-     <string>昵称</string>
+     <string>群名</string>
     </property>
    </column>
    <column>
@@ -75,6 +46,35 @@ QTableWidget QTableCornerButton::section {
      <string>id</string>
     </property>
    </column>
+  </widget>
+  <widget class="QPushButton" name="pushButton_cancel">
+   <property name="geometry">
+    <rect>
+     <x>190</x>
+     <y>230</y>
+     <width>101</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>取消</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_yes">
+   <property name="geometry">
+    <rect>
+     <x>80</x>
+     <y>230</y>
+     <width>101</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(255, 85, 0);</string>
+   </property>
+   <property name="text">
+    <string>加入群组</string>
+   </property>
   </widget>
  </widget>
  <resources/>

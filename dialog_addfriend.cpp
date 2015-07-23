@@ -16,5 +16,13 @@ dialog_addfriend::~dialog_addfriend()
 
 void dialog_addfriend::on_pushButton_yes_clicked()
 {
+    this->close();
     emit sendFindData(ui->lineEdit_friend_name->text(),ui->lineEdit_friend_id->text());
+}
+
+
+
+void dialog_addfriend::on_pushButton_cancel_clicked()
+{
+    this->close();
 }

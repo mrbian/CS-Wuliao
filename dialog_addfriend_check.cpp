@@ -18,8 +18,8 @@ dialog_addfriend_check::~dialog_addfriend_check()
     delete ui;
 }
 
-void dialog_addfriend_check::output_data(QString name, QString id){
-    if(name != "" || id != ""){
+void dialog_addfriend_check::receiveFindData(QString name, QString id){
+    if(name == "root" || id == "root"){
         int row_count = ui->tableWidget_add_friend->rowCount();
         ui->tableWidget_add_friend->insertRow(row_count);
         ui->tableWidget_add_friend->setItem(0,0,new QTableWidgetItem(name));
@@ -36,3 +36,8 @@ void dialog_addfriend_check::on_pushButton_yes_clicked()
     emit sendMyFriend(name,id);
 }
 
+
+void dialog_addfriend_check::on_pushButton_cancel_clicked()
+{
+    this->close();
+}
