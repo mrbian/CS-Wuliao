@@ -2,25 +2,233 @@
 <ui version="4.0">
  <class>MainView</class>
  <widget class="QDialog" name="MainView">
+  <property name="enabled">
+   <bool>true</bool>
+  </property>
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>381</width>
-    <height>597</height>
+    <width>377</width>
+    <height>587</height>
    </rect>
   </property>
-  <property name="windowTitle">
-   <string>Dialog</string>
+  <property name="acceptDrops">
+   <bool>true</bool>
   </property>
-  <widget class="QListWidget" name="listWidget">
+  <property name="windowTitle">
+   <string>无聊来聊天</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
+  <widget class="Line" name="line">
    <property name="geometry">
     <rect>
-     <x>150</x>
-     <y>20</y>
-     <width>201</width>
-     <height>391</height>
+     <x>160</x>
+     <y>670</y>
+     <width>118</width>
+     <height>3</height>
     </rect>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
+   </property>
+  </widget>
+  <widget class="QWidget" name="verticalLayoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>381</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QLabel" name="label">
+      <property name="styleSheet">
+       <string notr="true">font: 15pt &quot;华文中宋&quot;;
+background-color: rgb(0, 255, 255);</string>
+      </property>
+      <property name="text">
+       <string>你好，卞留念</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="verticalLayoutWidget_2">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>50</y>
+     <width>381</width>
+     <height>43</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout_2">
+    <item>
+     <widget class="QPushButton" name="pushButton_myfreind">
+      <property name="minimumSize">
+       <size>
+        <width>181</width>
+        <height>41</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">text-align:left;
+font: 14pt &quot;宋体&quot;;
+background-color: rgb(85, 170, 255);</string>
+      </property>
+      <property name="text">
+       <string>我的好友</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="verticalLayoutWidget_4">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>92</y>
+     <width>381</width>
+     <height>254</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout_4">
+    <item>
+     <widget class="QTableWidget" name="tableWidget_friend">
+      <column>
+       <property name="text">
+        <string>昵称</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>id</string>
+       </property>
+      </column>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="pushButton_mygroup">
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>41</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">text-align:left;
+font: 14pt &quot;宋体&quot;;
+background-color: rgb(85, 170, 255);</string>
+      </property>
+      <property name="text">
+       <string>我的群</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QTableWidget" name="tableWidget_group">
+      <column>
+       <property name="text">
+        <string>组名</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>id</string>
+       </property>
+      </column>
+     </widget>
+    </item>
+    <item>
+     <spacer name="verticalSpacer">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>20</width>
+        <height>40</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QPushButton" name="pushButton">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>400</y>
+     <width>181</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">text-align:center;
+font: 14pt &quot;宋体&quot;;
+background-color: rgb(85, 170, 255);</string>
+   </property>
+   <property name="text">
+    <string>添加好友</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_addgroup">
+   <property name="geometry">
+    <rect>
+     <x>180</x>
+     <y>400</y>
+     <width>201</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">text-align:center;
+font: 14pt &quot;宋体&quot;;
+background-color: rgb(85, 170, 255);</string>
+   </property>
+   <property name="text">
+    <string>加入群组</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_creategroup">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>440</y>
+     <width>181</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">text-align:center;
+font: 14pt &quot;宋体&quot;;
+background-color: rgb(85, 170, 255);</string>
+   </property>
+   <property name="text">
+    <string>创建群组</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_setting">
+   <property name="geometry">
+    <rect>
+     <x>180</x>
+     <y>440</y>
+     <width>201</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">text-align:center;
+font: 14pt &quot;宋体&quot;;
+background-color: rgb(85, 170, 255);</string>
+   </property>
+   <property name="text">
+    <string>系统设置</string>
    </property>
   </widget>
  </widget>

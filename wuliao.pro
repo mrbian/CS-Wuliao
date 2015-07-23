@@ -13,12 +13,20 @@ TEMPLATE = app
 SOURCES += main.cpp\
         mainwindow.cpp \
     dialog.cpp \
-    mainview.cpp
+    mainview.cpp \
+    dialog_addfriend.cpp
 
 HEADERS  += mainwindow.h \
     dialog.h \
-    mainview.h
+    mainview.h \
+    dialog_addfriend.h
 
 FORMS    += mainwindow.ui \
     dialog.ui \
-    mainview.ui
+    mainview.ui \
+    dialog_addfriend.ui
+
+OTHER_FILES +=
+
+RESOURCES += \
+    resource.qrc
