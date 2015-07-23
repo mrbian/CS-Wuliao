@@ -6,19 +6,22 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>536</width>
-    <height>302</height>
+    <width>496</width>
+    <height>269</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(85, 170, 255);</string>
+  </property>
   <widget class="QLineEdit" name="lineEdit_friend_name">
    <property name="geometry">
     <rect>
-     <x>210</x>
-     <y>80</y>
-     <width>251</width>
+     <x>180</x>
+     <y>50</y>
+     <width>211</width>
      <height>31</height>
     </rect>
    </property>
@@ -29,10 +32,10 @@
   <widget class="QPushButton" name="pushButton_cancel">
    <property name="geometry">
     <rect>
-     <x>300</x>
-     <y>220</y>
-     <width>81</width>
-     <height>31</height>
+     <x>280</x>
+     <y>190</y>
+     <width>91</width>
+     <height>41</height>
     </rect>
    </property>
    <property name="text">
@@ -42,10 +45,10 @@
   <widget class="QPushButton" name="pushButton_yes">
    <property name="geometry">
     <rect>
-     <x>170</x>
-     <y>220</y>
-     <width>81</width>
-     <height>31</height>
+     <x>150</x>
+     <y>190</y>
+     <width>101</width>
+     <height>41</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -58,9 +61,9 @@
   <widget class="QLineEdit" name="lineEdit_friend_id">
    <property name="geometry">
     <rect>
-     <x>200</x>
-     <y>140</y>
-     <width>261</width>
+     <x>180</x>
+     <y>110</y>
+     <width>211</width>
      <height>31</height>
     </rect>
    </property>
@@ -71,15 +74,16 @@
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>80</x>
-     <y>80</y>
+     <x>40</x>
+     <y>50</y>
      <width>121</width>
      <height>31</height>
     </rect>
    </property>
    <property name="styleSheet">
     <string notr="true">text-align:center;
-color: rgb(0, 0, 0);</string>
+color: rgb(0, 0, 0);
+font: 75 12pt &quot;宋体&quot;;</string>
    </property>
    <property name="text">
     <string> 按昵称查找：</string>
@@ -88,14 +92,15 @@ color: rgb(0, 0, 0);</string>
   <widget class="QLabel" name="label_2">
    <property name="geometry">
     <rect>
-     <x>80</x>
-     <y>140</y>
+     <x>40</x>
+     <y>110</y>
      <width>131</width>
      <height>31</height>
     </rect>
    </property>
    <property name="styleSheet">
     <string notr="true">text-align:center;
+font: 75 12pt &quot;宋体&quot;;
 color: rgb(0, 0, 0);</string>
    </property>
    <property name="text">

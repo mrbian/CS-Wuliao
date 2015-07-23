@@ -9,6 +9,7 @@
 #include <QPixmap>
 #include <QStyle>
 #include <QMessageBox>
+#include "dialog_addfriend.h"
 namespace Ui {
     class MainView;
 }

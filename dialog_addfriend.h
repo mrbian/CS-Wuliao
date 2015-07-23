@@ -14,6 +14,10 @@ class dialog_addfriend : public QDialog
 public:
     explicit dialog_addfriend(QWidget *parent = 0);
     ~dialog_addfriend();
+signals:
+    void sendFindData(QString,QString);
+private slots:
+    void on_pushButton_yes_clicked();
 
 private:
     Ui::dialog_addfriend *ui;
