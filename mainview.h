@@ -10,6 +10,7 @@
 #include <QStyle>
 #include <QMessageBox>
 #include "dialog_addfriend.h"
+#include "dialog_addfriend_check.h"
 namespace Ui {
     class MainView;
 }
@@ -30,12 +31,13 @@ public:
     QAction *restoreWinAction;
     QAction *quitAction;
 
-    //addFriend *a;
-
-
+    dialog_addfriend *_find;
+    dialog_addfriend_check *_add_friend_check;
+signals:
+    void sendFriendData(QString,QString);
 public slots:
     void iconActivated(QSystemTrayIcon::ActivationReason reason);
-    void receiveFindData(QString,QString);
+    void getMyFriend(QString,QString);
 private:
     Ui::MainView *ui;
 
@@ -45,6 +47,7 @@ private slots:
    void on_pushButton_clicked();
    void on_pushButton_myfreind_clicked();
    void on_pushButton_mygroup_clicked();
+   void receiveFindData(QString,QString);
 
 };
 

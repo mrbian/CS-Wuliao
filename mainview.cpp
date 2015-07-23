@@ -11,6 +11,12 @@ MainView::MainView(QWidget *parent) :
 
     setWindowFlags(flags);
     ui->setupUi(this);
+    ui->tableWidget_friend->setAlternatingRowColors(true);
+    _find = new dialog_addfriend();
+    _add_friend_check = new dialog_addfriend_check();
+    connect(this,SIGNAL(sendFriendData(QString,QString)),_add_friend_check,SLOT(output_data(QString,QString)));
+    connect(_find,SIGNAL(sendFindData(QString,QString)),this,SLOT(receiveFindData(QString,QString)));
+    connect(_add_friend_check,SIGNAL(sendMyFriend(QString,QString)),this,SLOT(getMyFriend(QString,QString)));
 }
 
 MainView::~MainView()
@@ -105,10 +111,19 @@ void MainView::on_pushButton_mygroup_clicked()
 
 void MainView::on_pushButton_clicked()
 {
-    //connect(a,SIGNAL(sendFindData(QString,QString)),this,SLOT(receiveFindData(QString,QString)));
-   // a->exec();
+   _find->exec();
 }
 
 void MainView::receiveFindData(QString name, QString id){
-    QMessageBox::about(this,name,id);
+    _find->close();
+    if(name == "root" && id == "root"){
+        emit sendFriendData(name,id);
+    }
+    //QMessageBox::about(this,name,id);
+}
+
+void MainView::getMyFriend(QString name, QString id){
+    ui->tableWidget_friend->insertRow(0);
+    ui->tableWidget_friend->setItem(0,0,new QTableWidgetItem(name));
+    ui->tableWidget_friend->setItem(0,1,new QTableWidgetItem(id));
 }

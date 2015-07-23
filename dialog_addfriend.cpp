@@ -6,6 +6,7 @@ dialog_addfriend::dialog_addfriend(QWidget *parent) :
     ui(new Ui::dialog_addfriend)
 {
     ui->setupUi(this);
+    setWindowIcon(QIcon(":/1.png"));
 }
 
 dialog_addfriend::~dialog_addfriend()

@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>无聊来找朋友</string>
   </property>
   <property name="styleSheet">
    <string notr="true">background-color: rgb(85, 170, 255);</string>
