@@ -9,6 +9,7 @@ dialog_addgroup_check::dialog_addgroup_check(QWidget *parent) :
     ui->tableWidget_add_group->setSelectionBehavior(QAbstractItemView::SelectRows);
     ui->tableWidget_add_group->setSelectionMode(QAbstractItemView::SingleSelection);
     //ui->tableWidget_add_friend->verticalHeader()->setResizeMode(QHeaderView::Stretch);
+    ui->tableWidget_add_group->setEditTriggers(QAbstractItemView::NoEditTriggers);
     ui->tableWidget_add_group->setAlternatingRowColors(true);
     setWindowIcon(QIcon(":/1.png"));
 }

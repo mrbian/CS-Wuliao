@@ -240,7 +240,7 @@ background-color: rgb(85, 170, 255);</string>
     <string>创建群组</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_setting">
+  <widget class="QPushButton" name="pushButton_settings">
    <property name="geometry">
     <rect>
      <x>180</x>

@@ -10,6 +10,7 @@ dialog_addfriend_check::dialog_addfriend_check(QWidget *parent) :
     ui->tableWidget_add_friend->setSelectionMode(QAbstractItemView::SingleSelection);
     //ui->tableWidget_add_friend->verticalHeader()->setResizeMode(QHeaderView::Stretch);
     ui->tableWidget_add_friend->setAlternatingRowColors(true);
+    ui->tableWidget_add_friend->setEditTriggers(QAbstractItemView::NoEditTriggers);
     setWindowIcon(QIcon(":/1.png"));
 }
 

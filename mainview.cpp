@@ -14,13 +14,21 @@ MainView::MainView(QWidget *parent) :
     ui->tableWidget_friend->setAlternatingRowColors(true);
     ui->tableWidget_friend->setSelectionBehavior(QAbstractItemView::SelectRows);
     ui->tableWidget_friend->setSelectionMode(QAbstractItemView::SingleSelection);
+    ui->tableWidget_friend->setEditTriggers(QAbstractItemView::NoEditTriggers);
     ui->tableWidget_group->setAlternatingRowColors(true);
     ui->tableWidget_group->setSelectionBehavior(QAbstractItemView::SelectRows);
     ui->tableWidget_group->setSelectionMode(QAbstractItemView::SingleSelection);
+    ui->tableWidget_group->setEditTriggers(QAbstractItemView::NoEditTriggers);
     _find = new dialog_addfriend();
     _add_friend_check = new dialog_addfriend_check();
     _find_group = new dialog_addgroup();
     _add_group_check = new dialog_addgroup_check();
+    _creategroup = new dialog_creategroup();
+    _settings = new dialog_settings();
+    _single_chat = new single_chat_window[20];
+    _group_chat = new group_chat_window[20];
+    single_chat_length = 0;
+    group_chat_length = 0;
     connect(_find,SIGNAL(sendFindData(QString,QString)),_add_friend_check,SLOT(receiveFindData(QString,QString)));
     connect(_find_group,SIGNAL(sendFindGroupData(QString,QString)),_add_group_check,SLOT(receiveFindGroupData(QString,QString)));
     connect(_add_friend_check,SIGNAL(sendMyFriend(QString,QString)),this,SLOT(getMyFriend(QString,QString)));
@@ -141,3 +149,31 @@ void MainView::getMyGroup(QString name, QString id){
     ui->tableWidget_group->setItem(0,1,new QTableWidgetItem(id));
 }
 
+
+void MainView::on_tableWidget_friend_doubleClicked(const QModelIndex &index)
+{
+    QTableWidgetItem * item = new QTableWidgetItem();
+    item = ui->tableWidget_friend->item(index.row(),0);
+    _single_chat[single_chat_length].show();
+    single_chat_length ++;
+}
+
+
+
+void MainView::on_tableWidget_group_doubleClicked(const QModelIndex &index)
+{
+    QTableWidgetItem * item = new QTableWidgetItem();
+    item = ui->tableWidget_group->item(index.row(),0);
+    _group_chat[group_chat_length].show();
+    group_chat_length++;
+}
+
+void MainView::on_pushButton_creategroup_clicked()
+{
+    _creategroup->exec();
+}
+
+void MainView::on_pushButton_settings_clicked()
+{
+    _settings->exec();
+}
