@@ -10,7 +10,7 @@ node程序环境：
 * mysql2@2.0.2
 
 ## 项目简介
-(https://www.cnblogs.com/bbman/p/12085278.html)[https://www.cnblogs.com/bbman/p/12085278.html]
+[https://www.cnblogs.com/bbman/p/12085278.html](https://www.cnblogs.com/bbman/p/12085278.html)
 
 ## 参考资料
-(https://www.cnblogs.com/lidabo/p/7655533.html)[QT4安装指南]
+[https://www.cnblogs.com/lidabo/p/7655533.html](QT4安装指南)
