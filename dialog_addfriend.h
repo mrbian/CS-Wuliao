@@ -15,7 +15,7 @@ public:
     explicit dialog_addfriend(QWidget *parent = 0);
     ~dialog_addfriend();
 signals:
-    void sendFindData(QString,QString);
+    void sendFindData(int friend_account);
 
 private slots:
     void on_pushButton_yes_clicked();

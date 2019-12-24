@@ -2,7 +2,7 @@
 #define DIALOG_ADDFRIEND_CHECK_H
 
 #include <QDialog>
-
+#include <QMessageBox>
 namespace Ui {
     class dialog_addfriend_check;
 }
@@ -15,9 +15,9 @@ public:
     explicit dialog_addfriend_check(QWidget *parent = 0);
     ~dialog_addfriend_check();
 signals:
-    void sendMyFriend(QString,QString);
+    void sendMyFriend(QString);
 public slots:
-    void receiveFindData(QString,QString);
+    void receiveFindData(QString);
 private slots:
     void on_pushButton_yes_clicked();
 

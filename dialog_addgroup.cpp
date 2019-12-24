@@ -17,7 +17,7 @@ dialog_addgroup::~dialog_addgroup()
 void dialog_addgroup::on_pushButton_yes_clicked()
 {
     this->close();
-    emit sendFindGroupData(ui->lineEdit_group_name->text(),ui->lineEdit_group_id->text());
+    emit sendFindGroupData(ui->lineEdit_group_id->text().toInt());
 }
 
 void dialog_addgroup::on_pushButton_cancel_clicked()

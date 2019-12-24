@@ -11,7 +11,10 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>单人聊天</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(85, 170, 255);</string>
   </property>
   <widget class="QListWidget" name="listWidget">
    <property name="geometry">
@@ -21,6 +24,9 @@
      <width>511</width>
      <height>411</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(255, 255, 255);</string>
    </property>
   </widget>
   <widget class="QTextEdit" name="textEdit">
@@ -32,6 +38,9 @@
      <height>111</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(255, 255, 255);</string>
+   </property>
   </widget>
   <widget class="QPushButton" name="pushButton">
    <property name="geometry">
@@ -41,6 +50,10 @@
      <width>121</width>
      <height>41</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(255, 85, 0);
+color: rgb(255, 170, 0);</string>
    </property>
    <property name="text">
     <string>发送</string>
@@ -68,6 +81,9 @@
      <height>22</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(255, 85, 0);</string>
+   </property>
    <item>
     <property name="text">
      <string>Enter发送</string>
@@ -84,7 +100,7 @@
     <rect>
      <x>600</x>
      <y>0</y>
-     <width>81</width>
+     <width>121</width>
      <height>41</height>
     </rect>
    </property>
@@ -120,17 +136,17 @@
     </property>
    </item>
   </widget>
-  <widget class="QTextEdit" name="textEdit_2">
-   <property name="enabled">
-    <bool>false</bool>
-   </property>
+  <widget class="QListWidget" name="listWidget_2">
    <property name="geometry">
     <rect>
      <x>570</x>
      <y>40</y>
      <width>151</width>
-     <height>391</height>
+     <height>251</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(255, 255, 255);</string>
    </property>
   </widget>
  </widget>

@@ -5,7 +5,7 @@
 #-------------------------------------------------
 
 QT       += core gui
-
+QT       += network
 TARGET = wuliao
 TEMPLATE = app
 
@@ -21,7 +21,11 @@ SOURCES += main.cpp\
     dialog_creategroup.cpp \
     dialog_settings.cpp \
     single_chat_window.cpp \
-    group_chat_window.cpp
+    group_chat_window.cpp \
+    user.cpp \
+    session.cpp \
+    dialog_deal.cpp \
+    chatroom.cpp
 
 HEADERS  += mainwindow.h \
     dialog.h \
@@ -33,7 +37,11 @@ HEADERS  += mainwindow.h \
     dialog_creategroup.h \
     dialog_settings.h \
     single_chat_window.h \
-    group_chat_window.h
+    group_chat_window.h \
+    user.h \
+    session.h \
+    dialog_deal.h \
+    chatroom.h
 
 FORMS    += mainwindow.ui \
     dialog.ui \
@@ -45,7 +53,9 @@ FORMS    += mainwindow.ui \
     dialog_creategroup.ui \
     dialog_settings.ui \
     single_chat_window.ui \
-    group_chat_window.ui
+    group_chat_window.ui \
+    dialog_deal.ui \
+    chatroom.ui
 
 OTHER_FILES +=
 

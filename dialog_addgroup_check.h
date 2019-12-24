@@ -15,7 +15,7 @@ public:
     explicit dialog_addgroup_check(QWidget *parent = 0);
     ~dialog_addgroup_check();
 public slots:
-    void receiveFindGroupData(QString,QString);
+    void receiveFindGroupData(int);
 signals:
     void sendMyGroup(QString,QString);
 private slots:

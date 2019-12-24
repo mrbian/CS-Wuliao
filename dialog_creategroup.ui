@@ -39,7 +39,7 @@
     <string>取消</string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit">
+  <widget class="QLineEdit" name="lineEdit_group_name">
    <property name="geometry">
     <rect>
      <x>90</x>
@@ -49,17 +49,7 @@
     </rect>
    </property>
   </widget>
-  <widget class="QTextEdit" name="textEdit">
-   <property name="geometry">
-    <rect>
-     <x>90</x>
-     <y>160</y>
-     <width>201</width>
-     <height>41</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QTextEdit" name="textEdit_2">
+  <widget class="QTextEdit" name="textEdit_describe">
    <property name="geometry">
     <rect>
      <x>380</x>
@@ -106,6 +96,16 @@
    </property>
    <property name="text">
     <string>你对此群的描述</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEdit_account">
+   <property name="geometry">
+    <rect>
+     <x>90</x>
+     <y>170</y>
+     <width>201</width>
+     <height>41</height>
+    </rect>
    </property>
   </widget>
  </widget>

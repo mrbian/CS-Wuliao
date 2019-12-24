@@ -82,3 +82,12 @@ void Dialog::on_pushButton_2_clicked()
     myTrayIcon->hide();//内存泄露，暂时不管，注册页面以后再改
     this->close();
 }
+
+void Dialog::on_pushButton_reg_clicked()
+{
+    int account = this->ui->lineEdit_account->text().toInt();
+    QString password = this->ui->lineEdit_password->text();
+    QString email = this->ui->lineEdit_email->text();
+    QString name = this->ui->lineEdit_name->text();
+    emit send_reg_data(account,password,email,name);
+}

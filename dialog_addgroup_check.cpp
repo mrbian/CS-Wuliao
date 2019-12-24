@@ -19,13 +19,13 @@ dialog_addgroup_check::~dialog_addgroup_check()
     delete ui;
 }
 
-void dialog_addgroup_check::receiveFindGroupData(QString name, QString id){
-    if(name == "root" || id == "root"){
+void dialog_addgroup_check::receiveFindGroupData(int group_account){
+    /*if(name == "root" || id == "root"){
         int row_count = ui->tableWidget_add_group->rowCount();
         ui->tableWidget_add_group->insertRow(row_count);
         ui->tableWidget_add_group->setItem(0,0,new QTableWidgetItem(name));
         ui->tableWidget_add_group->setItem(0,1,new QTableWidgetItem(id));
-    }
+    }*/
     this->exec();
 }
 

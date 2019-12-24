@@ -16,7 +16,7 @@
   <property name="styleSheet">
    <string notr="true">background-color: rgb(85, 170, 255);</string>
   </property>
-  <widget class="QPushButton" name="pushButton">
+  <widget class="QPushButton" name="pushButton_reg">
    <property name="geometry">
     <rect>
      <x>140</x>
@@ -32,7 +32,7 @@
     <string>提交注册</string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit">
+  <widget class="QLineEdit" name="lineEdit_account">
    <property name="geometry">
     <rect>
      <x>150</x>
@@ -45,7 +45,7 @@
     <string notr="true">background-color: rgb(255, 255, 255);</string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit_2">
+  <widget class="QLineEdit" name="lineEdit_password">
    <property name="geometry">
     <rect>
      <x>150</x>
@@ -58,7 +58,7 @@
     <string notr="true">background-color: rgb(255, 255, 255);</string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit_3">
+  <widget class="QLineEdit" name="lineEdit_email">
    <property name="geometry">
     <rect>
      <x>150</x>
@@ -87,7 +87,7 @@
     <string>返回</string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit_4">
+  <widget class="QLineEdit" name="lineEdit_name">
    <property name="geometry">
     <rect>
      <x>150</x>

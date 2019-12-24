@@ -7,9 +7,14 @@ MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
-
     ui->setupUi(this);
+    this->deal = new dialog_deal();
     CreateTrayIcon();
+    connect(deal,SIGNAL(user_login_done(QString)),this,SLOT(check_user_login(QString)));
+    connect(&f,SIGNAL(send_reg_data(int,QString,QString,QString)),this,SLOT(get_reg_data(int,QString,QString,QString)));
+    connect(deal,SIGNAL(add_user_done(QString)),this,SLOT(check_add_user(QString)));
+    connect(this,SIGNAL(send_user_session(int,QString,QString,QString,QString,QString,QString,int,QTcpSocket *)),&m,SLOT(get_user_session(int,QString,QString,QString,QString,QString,QString,int)));
+
 }
 
 MainWindow::~MainWindow()
@@ -36,14 +41,16 @@ void MainWindow::on_pushButton_login_clicked()
 {
    QString str_account = ui->lineEdit_account->text();
    QString str_password = ui->lineEdit_password->text();
-   if(str_account == "root" && str_password == "root"){
+   int account = str_account.toInt();
+   deal->userLogin(account,str_password);
+   /*if(str_account == "root" && str_password == "root"){
        this->hide();
        myTrayIcon->hide();
        m.CreateTrayIcon();
        m.show();
    }else{
        QMessageBox::about(this,tr("错误"),tr("密码或者用户名错误"));
-   }
+   }*/
    //QMessageBox::about(this,tr("title"),str_account);
 }
 
@@ -109,5 +116,51 @@ void MainWindow::closeEvent(QCloseEvent *event){
         event->ignore();
     }else{
         event->accept();
+    }
+}
+
+void MainWindow::check_user_login(QString data){
+    QStringList datalist = data.split('|');  //对消息分组,登录分组比较特殊
+
+    QString type= datalist[0];
+    QString result = datalist[1];
+    QString user_account_str,user_password,user_name,user_friend,user_own_group,user_join_group,user_email,user_grant_str;
+
+    if(result == "success"){
+        this->hide();
+        myTrayIcon->hide();
+        user_account_str = datalist[2];
+        user_password = datalist[3];
+        user_name = datalist[4];
+        user_friend = datalist[5];
+        user_own_group = datalist[6];
+        user_join_group = datalist[7];
+        user_email = datalist[8];
+        user_grant_str = datalist[9];
+        emit send_user_session(user_account_str.toInt(),user_password,user_name,user_friend,user_own_group,user_join_group,user_email,user_grant_str.toInt(),this->deal->client);
+        /*m.CreateTrayIcon();
+        m.show();*/
+    }else if(result == "fail"){
+        if(datalist[2] == "already_login")
+            QMessageBox::about(this,tr("错误"),tr("用户已登录"));
+        else
+            QMessageBox::about(this,tr("错误"),tr("密码或者用户名错误"));
+    }
+}
+
+void MainWindow::get_reg_data(int account, QString password, QString email, QString name){
+    deal->addUser(name,password,account,email);
+}
+
+void MainWindow::check_add_user(QString data){
+    QStringList datalist = data.split('-');  //对消息分组
+
+    QString type= datalist[0];
+    QString result = datalist[1];
+    QString datacontent;
+    if(result == "success"){
+        QMessageBox::about(&f,tr("恭喜"),tr("注册成功"));
+    }else if(result == "fail"){
+        QMessageBox::about(&f,tr("sorry"),tr("用户已被注册"));
     }
 }

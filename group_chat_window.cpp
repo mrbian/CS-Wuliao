@@ -12,3 +12,4 @@ group_chat_window::~group_chat_window()
 {
     delete ui;
 }
+

@@ -258,6 +258,24 @@ background-color: rgb(85, 170, 255);</string>
     <string>系统设置</string>
    </property>
   </widget>
+  <widget class="QPushButton" name="pushButton_chatroom">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>480</y>
+     <width>181</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">text-align:center;
+font: 14pt &quot;宋体&quot;;
+background-color: rgb(85, 170, 255);</string>
+   </property>
+   <property name="text">
+    <string>聊天室</string>
+   </property>
+  </widget>
  </widget>
  <resources/>
  <connections/>

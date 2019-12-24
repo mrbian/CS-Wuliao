@@ -28,9 +28,13 @@ public:
     QAction *maxSizeAction;
     QAction *restoreWinAction;
     QAction *quitAction;
+signals:
+    void send_reg_data(int account,QString password,QString email,QString name);
 private slots:
     void on_pushButton_2_clicked();
     void iconActivated(QSystemTrayIcon::ActivationReason reason);
+    void on_pushButton_reg_clicked();
+
 private:
     Ui::Dialog *ui;
 protected:

@@ -19,22 +19,28 @@ dialog_addfriend_check::~dialog_addfriend_check()
     delete ui;
 }
 
-void dialog_addfriend_check::receiveFindData(QString name, QString id){
-    if(name == "root" || id == "root"){
+void dialog_addfriend_check::receiveFindData(QString data){
+    QStringList datalist = data.split("-");
+    QString result = datalist[1];
+    if(result == "success"){
+        QString friend_name = datalist[2];
+        QString friend_account_str = datalist[3];
         int row_count = ui->tableWidget_add_friend->rowCount();
         ui->tableWidget_add_friend->insertRow(row_count);
-        ui->tableWidget_add_friend->setItem(0,0,new QTableWidgetItem(name));
-        ui->tableWidget_add_friend->setItem(0,1,new QTableWidgetItem(id));
+        ui->tableWidget_add_friend->setItem(0,0,new QTableWidgetItem(friend_name));
+        ui->tableWidget_add_friend->setItem(0,1,new QTableWidgetItem(friend_account_str));
+        this->exec();
+    }else if(result == "fail"){
+        QMessageBox::about(this->parentWidget(),tr("sorry"),tr("没有此用户"));
     }
-    this->exec();
 }
 
 void dialog_addfriend_check::on_pushButton_yes_clicked()
 {
-    QString name = ui->tableWidget_add_friend->item(0,0)->text();
-    QString id = ui->tableWidget_add_friend->item(0,1)->text();
+    QString friend_account = ui->tableWidget_add_friend->item(0,1)->text();
+    this->ui->tableWidget_add_friend->removeRow(0);
     this->close();
-    emit sendMyFriend(name,id);
+    emit sendMyFriend(friend_account);
 }
 
 

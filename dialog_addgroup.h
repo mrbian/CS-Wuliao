@@ -15,7 +15,7 @@ public:
     explicit dialog_addgroup(QWidget *parent = 0);
     ~dialog_addgroup();
 signals:
-    void sendFindGroupData(QString,QString);
+    void sendFindGroupData(int);
 private slots:
     void on_pushButton_yes_clicked();
 

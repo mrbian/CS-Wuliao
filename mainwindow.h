@@ -8,6 +8,8 @@
 #include <QCloseEvent>
 #include "dialog.h"
 #include "mainview.h"
+#include "dialog_deal.h"
+#include "session.h"
 namespace Ui {
     class MainWindow;
 }
@@ -27,15 +29,20 @@ public:
     QAction *maxSizeAction;
     QAction *restoreWinAction;
     QAction *quitAction;
-
+    dialog_deal * deal;
 public slots:
     void iconActivated(QSystemTrayIcon::ActivationReason reason);
+    void check_user_login(QString data);
+    void get_reg_data(int account,QString password,QString email,QString name);
+    void check_add_user(QString data);
 private slots:
 
     void on_pushButton_submit_clicked();
 
     void on_pushButton_login_clicked();
-
+signals:
+    void send_user_session(int user_account,QString user_password,QString user_name,QString user_friend,
+                           QString user_own_group,QString user_join_group,QString user_email,int user_grant,QTcpSocket *client);
 private:
     Ui::MainWindow *ui;
     Dialog f;
